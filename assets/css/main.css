@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root[data-theme="dark"] {
+  --bg-main: hsl(0 0% 0%);
+  --bg-muted: hsl(0 0% 5%);
+  --bg-accent: hsl(0 0% 10%);
+  --text-light: hsl(0 0% 95%);
+  --text-muted: hsl(0 0% 70%);
+  --text-accent: hsl(220 90% 60%);
+
+  --gradient-from: var(--bg-main);
+  --gradient-to: var(--bg-muted);
+}
+
+:root[data-theme="light"] {
+  --bg-main: hsl(0 0% 100%);
+  --bg-muted: hsl(0 0% 95%);
+  --bg-accent: hsl(0 0% 85%);
+  --text-light: hsl(0 0% 5%);
+  --text-muted: hsl(0 0% 30%);
+  --text-accent: hsl(220 90% 60%);
+
+  --gradient-from: var(--bg-main);
+  --gradient-to: var(--bg-muted);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+}
+
+.header {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--bg-accent);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header__container {
+  padding: clamp(12px, 3vw, 20px) clamp(20px, 5vw, 70px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 4vw, 40px);
+}
+
+.header__link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: clamp(1rem, 2.2vw, 1rem);
+  transition: color 0.2s;
+}
+
+.header__link:hover {
+  color: var(--text-light);
+}
+
+.header__theme-toggle,
+.header__mobile-toggle {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header__mobile-toggle {
+  display: none;
+}
+/* ============================
+   HAMBURGER MENU
+============================ */
+
+.header__mobile-toggle {
+  width: 32px;
+  height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.header__mobile-toggle span {
+  height: 3px;
+  width: 100%;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
+
+/* X dönüşümü */
+.header.is-open .header__mobile-toggle span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.header.is-open .header__mobile-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.is-open .header__mobile-toggle span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .header__mobile-toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: var(--bg-main);
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    padding: 32px 0;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header.is-open .header__nav {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}

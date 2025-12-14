@@ -1,0 +1,131 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video – en arkada */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: auto;
+
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero-video--mobile {
+  display: none;
+}
+
+/* Overlay – videonun üstünde */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Yazılar – her şeyin üstünde */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  animation: fadeUp 0.9s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: var(--text-accent);
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.hero-cta {
+  margin-top: 32px;
+  padding: 14px 36px;
+
+  display: inline-flex; /* 🔑 */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: var(--text-accent);
+  color: #fff;
+
+  text-decoration: none; /* 🔑 link çizgisini kaldır */
+  line-height: 1; /* 🔑 hizalama fix */
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--accent-soft);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+
+  .hero-video--desktop {
+    display: none;
+  }
+
+  .hero-video--mobile {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

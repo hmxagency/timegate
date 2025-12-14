@@ -1,0 +1,57 @@
+.cta-section {
+  padding: 140px 5%;
+  background-color: var(--bg-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-box {
+  max-width: 720px;
+  text-align: center;
+  padding: 80px 60px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--bg-muted), var(--bg-main));
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.cta-box h2 {
+  font-size: clamp(2.2rem, 4vw, 2.6rem);
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* CTA Button */
+.cta-btn {
+  display: inline-block;
+  padding: 16px 38px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--bg-main);
+  background: var(--text-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .cta-box {
+    padding: 60px 30px;
+  }
+
+  .cta-box h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+}

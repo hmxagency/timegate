@@ -1,0 +1,105 @@
+.experience-section {
+  padding: 120px 5%;
+  background: var(--bg-main);
+}
+
+.experience-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+}
+
+.experience-header h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.experience-header h2 span {
+  color: var(--text-accent);
+}
+
+.experience-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* GRID */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.experience-card {
+  background: linear-gradient(180deg, var(--bg-muted), var(--bg-accent));
+  border-radius: 18px;
+  padding: 30px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Görsel Alan */
+.card-visual {
+  height: 160px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hafif karartma – metinle uyum için */
+.card-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+/* RESİMLER */
+.visual-scale {
+  background-image: url("../img/experience/deneyim.webp");
+}
+
+.visual-life {
+  background-image: url("../img/experience/yasayan.webp");
+}
+
+.visual-immersion {
+  background-image: url("../img/experience/atmosfer.webp");
+}
+
+/* Metinler */
+.experience-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* MOBİL */
+@media (max-width: 900px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/world.css" />
+    <link rel="stylesheet" href="assets/css/experience.css" />
+    <link rel="stylesheet" href="assets/css/vrshowcase.css" />
+    <link rel="stylesheet" href="assets/css/cta.css" />
+    <title>TimeGate</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">TimeGate</div>
+
+        <nav class="header__nav">
+          <a href="#hero" class="header__link">Anasayfa</a>
+          <a href="#experience" class="header__link">Deneyimler</a>
+          <a href="#how" class="header__link">Nasıl Çalışır</a>
+          <a href="#cta" class="header__link">İletişim</a>
+        </nav>
+
+        <button class="header__theme-toggle" onclick="toggleTheme()">🌙</button>
+
+        <!-- HAMBURGER -->
+        <button class="header__mobile-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+      <!-- DESKTOP VIDEO -->
+      <video
+        class="hero-video hero-video--desktop"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/img/hero/timegate-desktop-poster.jpg"
+      >
+        <source src="assets/img/hero/timegate-desktop.mp4" type="video/mp4" />
+      </video>
+
+      <!-- MOBILE VIDEO -->
+      <video
+        class="hero-video hero-video--mobile"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/img/hero/timegate-mobile-poster.jpg"
+      >
+        <source src="assets/img/hero/timegate-mobile.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay"></div>
+
+      <div class="hero-content">
+        <h1>
+          TimeGate VR ile <span>Geçmişe</span> git.<br />
+          Zamanı izleme, <span>yaşa.</span>
+        </h1>
+
+        <p>
+          VR ile İstanbul’dan Roma’ya, Samuraylardan imparatorluklara uzanan
+          gerçek bir zaman yolculuğu.
+        </p>
+
+        <!-- CTA -->
+        <a href="#experience" class="hero-cta">Deneyimi Keşfet</a>
+      </div>
+    </section>
+
+    <section id="experience" class="how-it-works world-selector">
+      <div class="world-container">
+        <!-- SOL: NASIL ÇALIŞIR + SEÇİM -->
+        <div class="world-list">
+          <h2>Nasıl Çalışır?</h2>
+          <p class="how-desc">
+            <span>TimeGate,</span> tarihi mekânları ve dönemleri aslına sadık
+            biçimde yeniden oluşturur. VR gözlüğü taktığınızda, seçtiğiniz
+            zamanın içine gerçek ölçekte adım atar, o dönemin atmosferini
+            birebir yaşarsınız.
+          </p>
+
+          <button
+            class="world-btn active"
+            data-image="assets/img/worlds/istanbul.webp"
+          >
+            İstanbul — 1456
+            <small>Fetih sonrası İstanbul sokakları</small>
+          </button>
+
+          <button class="world-btn" data-image="assets/img/worlds/paris.webp">
+            Paris — 1920
+            <small>Paris’in altın çağı</small>
+          </button>
+
+          <button class="world-btn" data-image="assets/img/worlds/japan.webp">
+            Japonya — 1856
+            <small>Edo Çağı’nda onur ve savaş kültürü</small>
+          </button>
+
+          <button class="world-btn" data-image="assets/img/worlds/roma.webp">
+            Roma — MS 80
+            <small>Kolezyum ve imparatorluk ihtişamı</small>
+          </button>
+        </div>
+
+        <!-- SAĞ: VR ÖNİZLEME -->
+        <div class="world-preview">
+          <img
+            id="worldImage"
+            src="assets/img/worlds/istanbul.webp"
+            alt="VR Deneyimi Önizleme"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="experience-section">
+      <header class="experience-header">
+        <h2>Zamanı Sadece Görme.<br /><span>İçinde Yaşa</span></h2>
+        <p>
+          TimeGate, geçmişi izlenen bir sahne değil, yaşanan bir an haline
+          getirir.
+        </p>
+      </header>
+
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="card-visual visual-scale"></div>
+          <h3>Gerçek Ölçekte Deneyim</h3>
+          <p>
+            Tarihi yapılar ve mekânlar VR içinde birebir ölçekte yeniden
+            canlandırılır.
+          </p>
+        </div>
+
+        <div class="experience-card">
+          <div class="card-visual visual-life"></div>
+          <h3>Yaşayan Tarih</h3>
+          <p>
+            O dönemin insanları, kıyafetleri ve günlük hayatı etrafınızda akar.
+          </p>
+        </div>
+
+        <div class="experience-card">
+          <div class="card-visual visual-immersion"></div>
+          <h3>Tam Daldırma Hissi</h3>
+          <p>
+            Sesler, ortam ve atmosfer sizi bugünden koparır, zaman algısını
+            unutturur.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="vr-showcase">
+      <div class="vr-track">
+        <img src="assets/img/vr/vr4.webp" alt="VR Deneyim" />
+        <img src="assets/img/vr/vr2.webp" alt="VR Deneyim" />
+        <img src="assets/img/vr/vr3.webp" alt="VR Deneyim" />
+        <img src="assets/img/vr/vr1.webp" alt="VR Deneyim" />
+      </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+      <div class="cta-box">
+        <h2>Geçmişe Gitmeye Hazır mısın?</h2>
+        <p>
+          TimeGate ile tarihi izleme, yaşa. VR deneyimini keşfetmek için bizimle
+          iletişime geç.
+        </p>
+
+        <a href="#contact" class="cta-btn"> Demo Talep Et </a>
+      </div>
+    </section>
+  </body>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/world.js"></script>
+  <script></script>
+</html>
